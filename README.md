@@ -5,10 +5,9 @@ A simple Ethereum wallet tracking application built with Node.js and Ethers.js.
 ## Features
 
 - Check Ethereum wallet balance
-- View wallet information
-- Display recent transactions
-- Simple and beginner-friendly codebase
-- Easy to extend with new blockchain features
+- Validate wallet addresses
+- Simple command-line output
+- Beginner-friendly project structure
 
 ## Project Structure
 
