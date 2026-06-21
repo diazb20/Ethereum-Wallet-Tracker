@@ -1,23 +1,27 @@
+const readline = require("readline");
 const { getBalance } = require("./wallet");
 const { isValidAddress } = require("./utils");
 
-async function main() {
-  const walletAddress =
-    "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045";
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
+rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
   if (!isValidAddress(walletAddress)) {
     console.error("Invalid Ethereum address");
+    rl.close();
     return;
   }
 
   try {
     const balance = await getBalance(walletAddress);
 
-    console.log("Wallet:", walletAddress);
+    console.log("\nWallet:", walletAddress);
     console.log("Balance:", balance, "ETH");
   } catch (error) {
     console.error(error.message);
   }
-}
 
-main();
+  rl.close();
+});
