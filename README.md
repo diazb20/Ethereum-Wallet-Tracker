@@ -8,7 +8,10 @@ A simple Ethereum wallet tracking application built with Node.js and Ethers.js.
 - Validate wallet addresses
 - Save checked wallets locally
 - View recently checked wallets
+- Display Ethereum network information
 - Simple command-line interface
+
+- 
 ## Project Structure
 
 ```text
