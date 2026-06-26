@@ -1,3 +1,4 @@
+const { isValidAddress, formatError } = require("./utils");
 const readline = require("readline");
 const { getBalance } = require("./wallet");
 const { isValidAddress } = require("./utils");
@@ -37,8 +38,8 @@ rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
 
     saveAddress(walletAddress);
   } catch (error) {
-    console.error(error.message);
-  }
+  console.error("Error:", formatError(error));
+}
 
   rl.close();
 });
