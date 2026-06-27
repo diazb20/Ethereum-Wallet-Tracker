@@ -25,4 +25,22 @@ async function getNetworkInfo() {
 module.exports = {
   getBalance,
   getNetworkInfo,
+  getLatestBlockNumber,
 };
+
+async function getLatestBlockNumber() {
+  try {
+    const blockNumber = await provider.getBlockNumber();
+    return blockNumber;
+  } catch (error) {
+    throw new Error("Failed to fetch latest block number");
+  }
+}
+try {
+  const latestBlock = await getLatestBlockNumber();
+
+  console.log("Latest Block:", latestBlock);
+  console.log("");
+} catch (error) {
+  console.log("Unable to retrieve latest block number");
+}
