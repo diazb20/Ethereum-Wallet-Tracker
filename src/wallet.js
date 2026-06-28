@@ -28,12 +28,16 @@ module.exports = {
   getLatestBlockNumber,
 };
 
-async function getLatestBlockNumber() {
+async function getBalance(address) {
   try {
-    const blockNumber = await provider.getBlockNumber();
-    return blockNumber;
+    const balance = await provider.getBalance(address);
+
+    return {
+      wei: balance.toString(),
+      eth: ethers.formatEther(balance),
+    };
   } catch (error) {
-    throw new Error("Failed to fetch latest block number");
+    throw new Error("Failed to fetch wallet balance");
   }
 }
 try {
