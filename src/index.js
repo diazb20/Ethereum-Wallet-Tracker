@@ -18,10 +18,11 @@ if (history.length > 0) {
   console.log("");
 }
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const {
+  isValidAddress,
+  formatError,
+  getCurrentTimestamp,
+} = require("./utils");
 
 rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
   if (!isValidAddress(walletAddress)) {
