@@ -1,6 +1,9 @@
+const config = require("./config");
+
 function printHeader() {
   console.log("=================================");
-  console.log(" Ethereum Wallet Tracker");
+  console.log(` ${config.appName}`);
+  console.log(` Version: ${config.version}`);
   console.log("=================================");
   console.log(`Time: ${new Date().toLocaleString()}`);
   console.log("");
