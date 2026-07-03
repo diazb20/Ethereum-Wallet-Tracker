@@ -128,3 +128,12 @@ MIT License
 ## Author
 
 Created for learning Ethereum development and blockchain programming.
+## Environment Variables
+
+Create a `.env` file based on `.env.example`.
+
+Example:
+
+```env
+RPC_URL=https://eth.llamarpc.com
+```
