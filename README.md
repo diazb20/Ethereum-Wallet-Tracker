@@ -137,3 +137,6 @@ Example:
 ```env
 RPC_URL=https://eth.llamarpc.com
 ```
+## Changelog
+
+Project changes are documented in the `CHANGELOG.md` file.
