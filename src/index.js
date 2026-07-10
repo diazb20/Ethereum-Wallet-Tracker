@@ -35,8 +35,11 @@ rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
     const balance = await getBalance(walletAddress);
 
     console.log("\nWallet:", walletAddress);
-    console.log("Balance:", balance, "ETH");
-
+console.log(
+  "Balance:",
+  Number(balance.eth).toFixed(4),
+  "ETH"
+);
     saveAddress(walletAddress);
   } catch (error) {
   console.error("Error:", formatError(error));
