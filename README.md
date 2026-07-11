@@ -81,7 +81,29 @@ Wallet Address:
 Balance:
 123.45 ETH
 ```
+## Installation
 
+...
+
+## Usage
+
+Run the application:
+
+```bash
+npm start
+```
+
+### Using command-line arguments
+
+You can also provide the wallet address directly when starting the application:
+
+```bash
+npm start -- 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
+```
+
+## Roadmap
+
+...
 ## Roadmap
 
 ### Version 1.0
