@@ -60,6 +60,13 @@ npm install ethers
 ## Usage
 
 Run the application:
+### Development
+
+Run the project in development mode:
+
+```bash
+npm run dev
+```
 
 ```bash
 node src/index.js
