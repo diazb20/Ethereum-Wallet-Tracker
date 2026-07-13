@@ -1,3 +1,4 @@
+**Current Version:** 1.0.0
 # Ethereum Wallet Tracker
 
 A simple Ethereum wallet tracking application built with Node.js and Ethers.js.
