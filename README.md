@@ -34,9 +34,11 @@ ethereum-wallet-tracker/
 
 ## Requirements
 
-- Node.js 18+
-- npm
+Before running the project, make sure you have:
 
+- Node.js 18 or later
+- npm
+- Internet connection (required to access the Ethereum RPC endpoint)
 ## Installation
 
 Clone the repository:
