@@ -172,3 +172,12 @@ RPC_URL=https://eth.llamarpc.com
 ## Changelog
 
 Project changes are documented in the `CHANGELOG.md` file.
+## Future Improvements
+
+Planned features for future releases:
+
+- Support multiple Ethereum networks
+- Display recent wallet transactions
+- Export wallet information to JSON
+- Improve command-line interface
+- Add automated tests
