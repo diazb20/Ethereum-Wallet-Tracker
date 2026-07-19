@@ -1,8 +1,7 @@
 **Current Version:** 1.0.0
 # Ethereum Wallet Tracker
 
-A simple Ethereum wallet tracking application built with Node.js and Ethers.js.
-
+A lightweight command-line application for checking Ethereum wallet balances and basic network information. Built with Node.js and Ethers.js as a simple learning project for Ethereum development.
 ## Features
 
 - Check Ethereum wallet balance
