@@ -180,3 +180,11 @@ Planned features for future releases:
 - Export wallet information to JSON
 - Improve command-line interface
 - Add automated tests
+## Project Goals
+
+This project is intended to:
+
+- Learn the basics of Ethereum development
+- Practice working with the Ethers.js library
+- Understand how to interact with the Ethereum network
+- Build a simple command-line application
