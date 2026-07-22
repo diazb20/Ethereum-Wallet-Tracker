@@ -1,9 +1,10 @@
 const { isValidAddress, formatError } = require("./utils");
 const readline = require("readline");
-const { getBalance } = require("./wallet");
-const { isValidAddress } = require("./utils");
+
+const { getBalance, getNetworkInfo } = require("./wallet");
 const { saveAddress, getHistory } = require("./history");
 const { printHeader } = require("./logger");
+const { isValidAddress, formatError } = require("./utils");
 
 printHeader();
 
