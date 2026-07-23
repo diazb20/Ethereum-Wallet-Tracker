@@ -18,7 +18,11 @@ if (history.length > 0) {
 
   console.log("");
 }
-
+if (!walletAddress.trim()) {
+  console.log("Please enter a wallet address.");
+  rl.close();
+  return;
+}
 const {
   isValidAddress,
   formatError,
