@@ -37,6 +37,7 @@ rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
   }
 
   try {
+    console.log("Fetching wallet information...");
     const balance = await getBalance(walletAddress);
 
     console.log("\nWallet:", walletAddress);
