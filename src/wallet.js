@@ -48,3 +48,10 @@ try {
 } catch (error) {
   console.log("Unable to retrieve latest block number");
 }
+async function getTransactionCount(address) {
+  try {
+    return await provider.getTransactionCount(address);
+  } catch (error) {
+    throw new Error("Failed to fetch transaction count");
+  }
+}
