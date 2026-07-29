@@ -6,8 +6,7 @@ function printHeader() {
   console.log(` Version: ${config.version}`);
   console.log("=================================");
   console.log(`Time: ${new Date().toLocaleString()}`);
-  console.log("Track Ethereum wallet balances from the command line.");
-  console.log("");
+console.log("Check your Ethereum wallet easily.");  console.log("");
 }
 
 module.exports = {
