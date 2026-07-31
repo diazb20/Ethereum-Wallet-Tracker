@@ -1,4 +1,3 @@
-const { isValidAddress, formatError } = require("./utils");
 const readline = require("readline");
 
 const { getBalance, getNetworkInfo } = require("./wallet");
@@ -12,43 +11,48 @@ const history = getHistory();
 
 if (history.length > 0) {
   console.log("Recently Checked Wallets:");
+
   history.slice(-5).forEach((address, index) => {
     console.log(`${index + 1}. ${address}`);
   });
 
   console.log("");
 }
-if (!walletAddress.trim()) {
-  console.log("Please enter a wallet address.");
-  rl.close();
-  return;
-}
-const {
-  isValidAddress,
-  formatError,
-  getCurrentTimestamp,
-} = require("./utils");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
+  if (!walletAddress.trim()) {
+    console.log("Please enter a wallet address.");
+    rl.close();
+    return;
+  }
+
   if (!isValidAddress(walletAddress)) {
-console.error("Invalid wallet address.");    rl.close();
+    console.error("Invalid wallet address.");
+    rl.close();
     return;
   }
 
   try {
     console.log("Fetching wallet information...");
+
     const balance = await getBalance(walletAddress);
 
     console.log("\nWallet:", walletAddress);
-console.log(
-  "Balance:",
-  Number(balance.eth).toFixed(4),
-  "ETH"
-);
+    console.log(
+      "Balance:",
+      Number(balance.eth).toFixed(4),
+      "ETH"
+    );
+
     saveAddress(walletAddress);
   } catch (error) {
-  console.error("Error:", formatError(error));
-}
+    console.error("Error:", formatError(error));
+  }
 
   rl.close();
 });
