@@ -38,7 +38,7 @@ console.error("Please enter a valid Ethereum wallet address.");
   }
 
   try {
-    console.log("Fetching wallet information...");
+    console.log("Connecting to Ethereum network...");
 
     const balance = await getBalance(walletAddress);
 
