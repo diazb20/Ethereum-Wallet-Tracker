@@ -12,8 +12,8 @@ function saveAddress(address) {
     );
   }
 
-  if (!addresses.includes(address)) {
-    addresses.push(address);
+  if (!addresses.includes(address.trim())) {
+    addresses.push(address.trim());
 
     fs.writeFileSync(
       historyFile,
