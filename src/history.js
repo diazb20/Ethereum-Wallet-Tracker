@@ -27,9 +27,9 @@ function getHistory() {
     return [];
   }
 
-  return JSON.parse(
-    fs.readFileSync(historyFile, "utf8")
-  );
+ return JSON.parse(
+  fs.readFileSync(historyFile, "utf8")
+).sort();
 }
 
 module.exports = {
