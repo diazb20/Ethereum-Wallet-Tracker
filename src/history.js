@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const historyFile = path.join(__dirname, "../wallet-history.json");
+const historyFile = path.resolve(__dirname, "../wallet-history.json");
 
 function saveAddress(address) {
   let addresses = [];
