@@ -4,8 +4,9 @@ const path = require("path");
 const historyFile = path.resolve(__dirname, "../wallet-history.json");
 
 function saveAddress(address) {
-  let addresses = [];
+let addresses = [];
 
+// Load existing wallet history if available
   if (fs.existsSync(historyFile)) {
     addresses = JSON.parse(
       fs.readFileSync(historyFile, "utf8")
