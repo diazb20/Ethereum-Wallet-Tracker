@@ -17,9 +17,10 @@ let addresses = [];
     addresses.push(address.trim());
 
     fs.writeFileSync(
-      historyFile,
-      JSON.stringify(addresses, null, 2)
-    );
+  historyFile,
+  JSON.stringify(addresses, null, 2),
+  "utf8"
+);
   }
 }
 
