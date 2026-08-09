@@ -25,9 +25,9 @@ let addresses = [];
 }
 
 function getHistory() {
-  if (!fs.existsSync(historyFile)) {
-    return [];
-  }
+ if (!fs.existsSync(historyFile)) {
+  return [];
+}
 
  return JSON.parse(
   fs.readFileSync(historyFile, "utf8")
