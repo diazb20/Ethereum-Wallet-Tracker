@@ -3,7 +3,7 @@ const path = require("path");
 
 const historyFile = path.resolve(__dirname, "../wallet-history.json");
 
-function saveAddress(address) {
+function address = address.trim();
 let addresses = [];
 
 // Load existing wallet history if available
