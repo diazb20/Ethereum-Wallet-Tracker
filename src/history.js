@@ -13,8 +13,8 @@ let addresses = [];
     );
   }
 
-  if (!addresses.includes(address.trim())) {
-    addresses.push(address.trim());
+if (address.trim() && !addresses.includes(address.trim())) {
+  addresses.push(address.trim());
 
     fs.writeFileSync(
   historyFile,
