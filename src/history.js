@@ -9,7 +9,8 @@ let addresses = [];
 // Load existing wallet history if available
   if (fs.existsSync(historyFile)) {
     addresses = JSON.parse(
-      fs.readFileSync(historyFile, "utf8")
+  fs.readFileSync(historyFile, "utf8")
+).filter(address => address)
     );
   }
 
