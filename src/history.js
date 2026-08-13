@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const historyFile = path.resolve(__dirname, "../wallet-history.json");
+const historyFile  const maxHistory = 10;= path.resolve(__dirname, "../wallet-history.json");
 
 function address = address.trim();
 let addresses = [];
@@ -15,8 +15,11 @@ let addresses = [];
   }
 
 if (address.trim() && !addresses.includes(address.trim())) {
-  addresses.push(address.trim());
+addresses.push(address.trim());
 
+if (addresses.length > maxHistory) {
+  addresses = addresses.slice(-maxHistory);
+}
     fs.writeFileSync(
   historyFile,
   JSON.stringify(addresses, null, 2),
