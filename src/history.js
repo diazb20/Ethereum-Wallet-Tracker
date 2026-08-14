@@ -15,8 +15,7 @@ let addresses = [];
   }
 
 if (address.trim() && !addresses.includes(address.trim())) {
-addresses.push(address.trim());
-
+addresses.push(address.trim().toLowerCase());
 if (addresses.length > maxHistory) {
   addresses = addresses.slice(-maxHistory);
 }
@@ -29,8 +28,7 @@ if (addresses.length > maxHistory) {
 }
 
 function getHistory() {
- if (!fs.existsSync(historyFile)) {
-  return [];
+if (!addresses.includes(address.trim().toLowerCase())) {  return [];
 }
 
  return JSON.parse(
