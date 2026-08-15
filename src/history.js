@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const historyFile  const maxHistory = 10;= path.resolve(__dirname, "../wallet-history.json");
+const historyFile  const maxHistory = 10;= const historyEncoding = "utf8"; path.resolve(__dirname, "../wallet-history.json");
 
 function address = address.trim();
 let addresses = [];
@@ -9,8 +9,7 @@ let addresses = [];
 // Load existing wallet history if available
   if (fs.existsSync(historyFile)) {
     addresses = JSON.parse(
-  fs.readFileSync(historyFile, "utf8")
-).filter(address => address)
+fs.readFileSync(historyFile, historyEncoding)).filter(address => address)
     );
   }
 
@@ -32,8 +31,7 @@ if (!addresses.includes(address.trim().toLowerCase())) {  return [];
 }
 
  return JSON.parse(
-  fs.readFileSync(historyFile, "utf8")
-).sort();
+fs.readFileSync(historyFile, historyEncoding)).sort();
 }
 
 module.exports = {
