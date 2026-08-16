@@ -1,37 +1,48 @@
 const fs = require("fs");
 const path = require("path");
 
-const historyFile  const maxHistory = 10;= const historyEncoding = "utf8"; path.resolve(__dirname, "../wallet-history.json");
+const historyFile = path.resolve(
+  __dirname,
+  "../wallet-history.json"
+);
 
-function address = address.trim();
-let addresses = [];
+const maxHistory = 10;
+const historyEncoding = "utf8";
 
-// Load existing wallet history if available
+function saveAddress(address) {
+  address = address.trim().toLowerCase();
+
+  let addresses = [];
+
   if (fs.existsSync(historyFile)) {
     addresses = JSON.parse(
-fs.readFileSync(historyFile, historyEncoding)).filter(address => address)
-    );
+      fs.readFileSync(historyFile, historyEncoding)
+    ).filter(Boolean);
   }
 
-if (address.trim() && !addresses.includes(address.trim())) {
-addresses.push(address.trim().toLowerCase());
-if (addresses.length > maxHistory) {
-  addresses = addresses.slice(-maxHistory);
-}
+  if (address && !addresses.includes(address)) {
+    addresses.push(address);
+
+    if (addresses.length > maxHistory) {
+      addresses = addresses.slice(-maxHistory);
+    }
+
     fs.writeFileSync(
-  historyFile,
-  JSON.stringify(addresses, null, 2),
-  "utf8"
-);
+      historyFile,
+      JSON.stringify(addresses, null, 2),
+      historyEncoding
+    );
   }
 }
 
 function getHistory() {
-if (!addresses.includes(address.trim().toLowerCase())) {  return [];
-}
+  if (!fs.existsSync(historyFile)) {
+    return [];
+  }
 
- return JSON.parse(
-fs.readFileSync(historyFile, historyEncoding)).sort();
+  return JSON.parse(
+    fs.readFileSync(historyFile, historyEncoding)
+  ).filter(Boolean).sort();
 }
 
 module.exports = {
