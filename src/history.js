@@ -20,8 +20,8 @@ function saveAddress(address) {
     ).filter(Boolean);
   }
 
-  if (address && !addresses.includes(address)) {
-    addresses.push(address);
+if (address && addresses.indexOf(address) === -1) {
+  addresses.push(address);
 
     if (addresses.length > maxHistory) {
       addresses = addresses.slice(-maxHistory);
