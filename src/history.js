@@ -24,8 +24,7 @@ if (address && addresses.indexOf(address) === -1) {
   addresses.push(address);
 
     if (addresses.length > maxHistory) {
-      addresses = addresses.slice(-maxHistory);
-    }
+addresses = addresses.slice(-maxHistory).filter(Boolean);    }
 
     fs.writeFileSync(
       historyFile,
