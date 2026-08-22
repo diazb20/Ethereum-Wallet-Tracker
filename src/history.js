@@ -6,7 +6,7 @@ const historyFile = path.resolve(
   "../wallet-history.json"
 );
 
-const maxHistory = 20;
+const maxHistory = 15;
 const historyEncoding = "utf8";
 
 function saveAddress(address) {
