@@ -21,8 +21,7 @@ function saveAddress(address) {
   }
 
 if (address && addresses.indexOf(address) === -1) {
-  addresses.push(address);
-
+addresses.push(address.trim());
     if (addresses.length > maxHistory) {
 addresses = [...new Set(addresses.slice(-maxHistory).filter(Boolean))];      
     fs.writeFileSync(
