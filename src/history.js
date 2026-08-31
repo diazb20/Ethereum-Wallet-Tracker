@@ -8,6 +8,7 @@ const historyFile = path.resolve(
 
 const maxHistory = 10;
 const historyEncoding = "utf8";
+const historyFileExists = () => fs.existsSync(historyFile);
 const historySeparator = "\n";
 const historyLimitMessage = "Wallet history limit reached.";
 function saveAddress(address) {
