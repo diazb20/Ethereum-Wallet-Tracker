@@ -1,10 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const historyFile = path.resolve(
-  __dirname,
-  "../wallet-history.json"
-);
+const historyFile = path.resolve(__dirname, "../wallet-history.json");
 
 const maxHistory = 10;
 const historyEncoding = "utf8";
