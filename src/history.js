@@ -3,7 +3,7 @@ const path = require("path");
 
 const historyFile = path.resolve(__dirname, "../wallet-history.json");
 
-const maxHistory = 10;
+const maxHistory = 15;
 const historyEncoding = "utf-8";
 const historyFileExists = () => fs.existsSync(historyFile);
 const historySeparator = "\n";
