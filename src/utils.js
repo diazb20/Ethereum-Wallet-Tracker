@@ -9,7 +9,7 @@ function formatError(error) {
     return "Unknown error.";
   }
 
-return error.message || "Something went wrong.";
+return error?.message || "Something went wrong.";
 }
 
 function getCurrentTimestamp() {
