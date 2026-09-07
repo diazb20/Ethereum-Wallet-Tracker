@@ -1,7 +1,7 @@
 const { ethers } = require("ethers");
 
 function isValidAddress(address) {
-  return ethers.isAddress(address);
+  return typeof address === "string" && ethers.isAddress(address);
 }
 
 function formatError(error) {
