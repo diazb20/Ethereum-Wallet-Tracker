@@ -4,7 +4,7 @@ function isValidAddress(address) {
   return typeof address === "string" && ethers.isAddress(address);
 }
 
-function formatError(error) {
+function formatError(error = {}) {
   if (!error) {
     return "Unknown error.";
   }
