@@ -4,7 +4,7 @@ function isValidAddress(address) {
 return (
   typeof address === "string" &&
   address.trim() !== "" &&
-  ethers.isAddress(address)
+ethers.isAddress(address.trim())
 );
 }
 
