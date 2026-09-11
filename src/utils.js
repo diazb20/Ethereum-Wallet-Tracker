@@ -21,8 +21,9 @@ function getCurrentTimestamp() {
 }
 
 function toChecksumAddress(address) {
-  return ethers.getAddress(address);
+  return ethers.getAddress(address.trim());
 }
+
 
 module.exports = {
   isValidAddress,
