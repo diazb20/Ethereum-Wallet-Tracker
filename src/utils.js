@@ -13,7 +13,7 @@ function formatError(error = {}) {
     return "Unknown error.";
   }
 
-return error?.message || "Something went wrong.";
+return error?.message?.trim() || "Something went wrong.";
 }
 
 function getCurrentTimestamp() {
