@@ -22,7 +22,12 @@ function getCurrentTimestamp() {
 }
 
 function toChecksumAddress(address) {
+  if (!isValidAddress(address)) {
+    return null;
+  }
+
   return ethers.getAddress(address.trim());
+}
 }
 
 
