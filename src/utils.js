@@ -17,8 +17,7 @@ return error?.message?.trim() || "Something went wrong.";
 }
 
 function getCurrentTimestamp() {
-  return new Date().toISOString();
-}
+return new Date().toISOString().replace("T", " ");}
 }
 
 function toChecksumAddress(address) {
