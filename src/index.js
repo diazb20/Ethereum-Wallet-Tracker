@@ -7,7 +7,8 @@ const { isValidAddress, formatError } = require("./utils");
 
 printHeader();
 
-const history = getHistory();
+const history = getHistory()
+  ;
 
 if (history.length > 0) {
   console.log("Recently Checked Wallets:");
