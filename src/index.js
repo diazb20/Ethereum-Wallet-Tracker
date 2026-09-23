@@ -17,7 +17,7 @@ if (history.length > 0) {
     console.log(`${index + 1}. ${address}`);
   });
 
-  console.log("");
+console.log();
 }
 
 const rl = readline.createInterface({
