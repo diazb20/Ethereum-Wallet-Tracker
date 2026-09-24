@@ -13,8 +13,8 @@ const history = getHistory()
 if (history.length > 0) {
   console.log("Recently Checked Wallets:");
 
-  history.slice(-5).forEach((address, index) => {
-    console.log(`${index + 1}. ${address}`);
+history.slice(-3).forEach((address, index) => {
+  console.log(`${index + 1}. ${address}`);
   });
 
 console.log();
