@@ -33,7 +33,7 @@ rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
   }
 
   if (!isValidAddress(walletAddress)) {
-console.error("Please enter a valid Ethereum wallet address.");
+console.error("Invalid Ethereum wallet address.");
     rl.close();
     return;
   }
