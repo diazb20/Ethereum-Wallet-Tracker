@@ -26,8 +26,10 @@ const rl = readline.createInterface({
 });
 
 rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
-  walletAddress = walletAddress.trim();  if (!walletAddress.trim()) {
-    console.log("Please enter a wallet address.");
+walletAddress = walletAddress.trim();
+
+if (!walletAddress) {
+  console.log("Please enter a wallet address.");
 rl.close();
 process.exit(0);
     return;
