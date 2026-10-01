@@ -10,8 +10,8 @@ printHeader();
 const history = getHistory();
 ;
 
-if (history.length > 0) {
-console.log("Recent Wallets:");
+if (history.length) {
+  console.log("Recent Wallets:");
   
 history.slice(-3).forEach((address, index) => {
   console.log(`${index + 1}. ${address}`);
