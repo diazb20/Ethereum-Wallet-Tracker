@@ -14,6 +14,7 @@ if (history.length > 0) {
   console.log("Recent Wallets:");
   
 history.slice(-3).forEach((address, index) => {
+  address = address.trim();
   console.log(`${index + 1}. ${address}`);
   });
 
