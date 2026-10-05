@@ -1,6 +1,6 @@
 const readline = require("readline");
 
-const { getBalance, getNetworkInfo } = require("./wallet");
+const { getBalance } = require("./wallet");
 const { saveAddress, getHistory } = require("./history");
 const { printHeader } = require("./logger");
 const { isValidAddress, formatError } = require("./utils");
