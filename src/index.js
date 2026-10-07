@@ -44,7 +44,7 @@ process.exit(0);
   }
 
   try {
-console.log("Fetching wallet balance...");
+console.log(`[${getCurrentTimestamp()}] Fetching wallet balance...`);
     
     const balance = await getBalance(walletAddress);
 
