@@ -7,8 +7,7 @@ const { isValidAddress, formatError, getCurrentTimestamp } = require("./utils");
 
 printHeader();
 
-const history = getHistory();
-;
+const history = getHistory();;
 
 if (history.length > 0) {
   console.log("Recent Wallets:");
@@ -49,6 +48,7 @@ console.log(`[${getCurrentTimestamp()}] Fetching wallet balance...`);
     const balance = await getBalance(walletAddress);
 
     console.log("\nWallet:", walletAddress);
+    console.log("Checked at:", getCurrentTimestamp());
     console.log(
       "Balance:",
       Number(balance.eth).toFixed(4),
