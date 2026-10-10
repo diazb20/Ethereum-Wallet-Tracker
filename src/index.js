@@ -1,65 +1,54 @@
-const readline = require("readline");
+const fs = require("fs");
+const path = require("path");
 
-const { getBalance } = require("./wallet");
-const { saveAddress, getHistory } = require("./history");
-const { printHeader } = require("./logger");
-const { isValidAddress, formatError, getCurrentTimestamp } = require("./utils");
+const historyFile = path.resolve(__dirname, "../wallet-history.json");
 
-printHeader();
+const maxHistory = 10;
+const historyEncoding = "utf-8";
+const historyFileExists = () => fs.existsSync(historyFile);
+const historySeparator = "\n";
+const historyLimitMessage = "Wallet history limit reached.";
 
-const history = getHistory();;
+function saveAddress(address) {
+  address = address.trim().toLowerCase();
 
-if (history.length > 0) {
-  console.log("Recent Wallets:");
-  
-history.slice(-3).forEach((address, index) => {
-  address = address.trim();
-console.log(`${index + 1}) ${address}`);
-});
+  if (!address) {
+    return;
+  }
 
-console.log();
+  let addresses = [];
+
+  if (fs.existsSync(historyFile)) {
+    addresses = JSON.parse(
+      fs.readFileSync(historyFile, historyEncoding)
+    ).filter(Boolean);
+  }
+
+  if (addresses.includes(address)) {
+    return;
+  }
+
+  addresses.push(address);
+  addresses = addresses.slice(-maxHistory);
+
+  fs.writeFileSync(
+    historyFile,
+    JSON.stringify(addresses, null, 2),
+    historyEncoding
+  );
 }
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-rl.question("Enter Ethereum wallet address: ", async (walletAddress) => {
-walletAddress = walletAddress.trim();
-
-if (!walletAddress) {
-console.error("Please enter a wallet address.");
-  rl.close();
-process.exit(0);
-    return;
+function getHistory() {
+  if (!fs.existsSync(historyFile)) {
+    return [];
   }
 
-  if (!isValidAddress(walletAddress)) {
-console.error("Invalid Ethereum wallet address.");
-rl.close();
-process.exit(0);
-    return;
-  }
+  return JSON.parse(
+    fs.readFileSync(historyFile, historyEncoding)
+  ).filter(Boolean).sort();
+}
 
-  try {
-console.log(`[${getCurrentTimestamp()}] Fetching wallet balance...`);
-    
-    const balance = await getBalance(walletAddress);
-
-    console.log("\nWallet:", walletAddress);
-    console.log("Checked at:", getCurrentTimestamp());
-    console.log(
-      "Balance:",
-      Number(balance.eth).toFixed(4),
-      "ETH"
-    );
-
-    saveAddress(walletAddress);
-  } catch (error) {
-    console.error("Error:", formatError(error));
-  }
-
-rl.close();
-process.exit(0);
-});
+module.exports = {
+  saveAddress,
+  getHistory,
+};
