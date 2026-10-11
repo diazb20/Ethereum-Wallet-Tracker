@@ -7,6 +7,7 @@ const provider = new ethers.JsonRpcProvider(
 async function getBalance(address) {
   try {
     const balance = await provider.getBalance(address);
+
     return ethers.formatEther(balance);
   } catch (error) {
     throw new Error("Failed to fetch wallet balance");
@@ -40,12 +41,8 @@ async function getBalance(address) {
     throw new Error("Failed to fetch wallet balance");
   }
 }
-try {
-  const latestBlock = await getLatestBlockNumber();
 
-  console.log("Latest Block:", latestBlock);
-  console.log("");
-
+async function getTransactionCount(address) {
   try {
     return await provider.getTransactionCount(address);
   } catch (error) {
