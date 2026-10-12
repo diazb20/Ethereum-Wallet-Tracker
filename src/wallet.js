@@ -23,6 +23,14 @@ async function getNetworkInfo() {
   };
 }
 
+async function getLatestBlockNumber() {
+  try {
+    return await provider.getBlockNumber();
+  } catch (error) {
+    throw new Error("Failed to fetch latest block number");
+  }
+}
+
 module.exports = {
   getBalance,
   getNetworkInfo,
