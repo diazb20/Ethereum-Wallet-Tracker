@@ -26,6 +26,8 @@ function toChecksumAddress(address) {
   }
 
 return ethers.getAddress(address.trim()).toLowerCase();
+
+}
 }
 }
 
