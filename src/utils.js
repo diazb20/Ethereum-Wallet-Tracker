@@ -29,7 +29,6 @@ return ethers.getAddress(address.trim()).toLowerCase();
 
 }
 }
-}
 
 
 module.exports = {
