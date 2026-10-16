@@ -1,9 +1,7 @@
 const { ethers } = require("ethers");
+const config = require("./config");
 
-const provider = new ethers.JsonRpcProvider(
-  "https://eth.llamarpc.com"
-);
-
+const provider = new ethers.JsonRpcProvider(config.rpcUrl);
 async function getNetworkInfo() {
   const network = await provider.getNetwork();
 
