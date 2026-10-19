@@ -45,7 +45,7 @@ function getHistory() {
 
   return JSON.parse(
     fs.readFileSync(historyFile, historyEncoding)
-  ).filter(Boolean).sort();
+  ).filter(Boolean);
 }
 
 module.exports = {
