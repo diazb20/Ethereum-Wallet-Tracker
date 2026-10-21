@@ -23,6 +23,7 @@ module.exports = {
   getBalance,
   getNetworkInfo,
   getLatestBlockNumber,
+  getTransactionCount,
 };
 
 async function getBalance(address) {
