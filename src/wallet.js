@@ -25,7 +25,6 @@ module.exports = {
   getLatestBlockNumber,
   getTransactionCount,
 };
-
 async function getBalance(address) {
   try {
     const balance = await provider.getBalance(address);
