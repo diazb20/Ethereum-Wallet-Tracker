@@ -8,8 +8,6 @@ function printHeader() {
   console.log(`Time: ${new Date().toLocaleString()}`);
 console.log("Check your Ethereum wallet easily.");  console.log("");
 }
-
 module.exports = {
   printHeader,
-  console.log("Ready to track Ethereum wallets.");
 };
