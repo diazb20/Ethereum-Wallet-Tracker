@@ -23,9 +23,12 @@ ethereum-wallet-tracker/
 ├── .gitignore
 │
 ├── src/
+│   ├── config.js
+│   ├── history.js
 │   ├── index.js
-│   ├── wallet.js
-│   └── utils.js
+│   ├── logger.js
+│   ├── utils.js
+│   └── wallet.js
 │
 └── docs/
     └── roadmap.md
